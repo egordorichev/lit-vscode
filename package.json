@@ -1,0 +1,27 @@
+{
+    "name": "lit-lang",
+    "displayName": "Lit",
+    "description": "Syntax highlighting for lit",
+    "version": "0.0.1",
+    "publisher" : "egordorichev",
+    "repository": "https://github.com/egordorichev/lit-vscode",
+    "engines": {
+        "vscode": "^1.48.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "lit",
+            "aliases": ["Lit", "lit"],
+            "extensions": [".lit"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "lit",
+            "scopeName": "source.lit",
+            "path": "./syntaxes/lit.tmLanguage.json"
+        }]
+    }
+}

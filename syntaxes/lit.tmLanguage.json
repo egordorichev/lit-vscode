@@ -1,0 +1,111 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Lit",
+	"patterns": [
+		{ "include" : "#code" }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword.control.lit",
+					"match": "\\b(is|break|const|constructor|continue|else|export|false|for|function|if|in|new|null|operator|return|static|super|this|true|var|while)\\b"
+				},
+				{
+					"name": "keyword.control.lit",
+					"match": "\\bclass\\b"
+				},
+				{
+					"name": "keyword.operator.logical.lit",
+					"match": "&&|\\|\\||is"
+				},
+				{
+					"name": "keyword.operator.comparison.lit",
+					"match": "(==|!=|<=|>=|<|>)"
+				},
+				{
+					"name": "keyword.operator.assignment.lit",
+					"match": "(\\+=|\\-=|\\*=|\\/=|%=|#=|=)"
+				},
+				{
+					"name": "keyword.operator.range.lit",
+					"match": "(\\.\\.)"
+				},
+				{
+					"name": "keyword.operator.null.lit",
+					"match": "(\\?\\?)"
+				},
+				{
+					"name": "keyword.operator.unary.lit",
+					"match": "(\\~|\\||&)"
+				},
+				{
+					"name": "keyword.operator.compound.lit",
+					"match": "(\\+\\+|\\--)"
+				}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.lit",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{ "include": "#stringEscapes" }
+			]
+		},
+		"constant": {
+			"patterns": [
+				{
+					"name": "constant.language.lit",
+					"match": "\\b(true|false|null)\\b"
+				},
+				{
+					"name": "constant.numeric.lit",
+					"match": "\\b(0b[0-1]*|0x[0-9a-fA-F]*|[0-9]+(\\.?[0-9]*)?(e(\\+|-)?[0-9]+)?)\\b"
+				}
+			]
+		},
+		"comment": {
+			"name": "comment.line.lit",
+			"match": "\/\/.*"
+		},
+		"blockComment": {
+			"name": "comment.block.lit",
+			"begin": "\/\\*",
+			"end": "\\*\/",
+			"patterns": [ { "include": "#blockComment" } ]
+		},
+		"call": {
+			"name": "support.function.lit",
+			"match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\b(?=\\s*(?:[(]|\\[\\[))"
+		},
+		"stringEscapes": {
+			"patterns": [
+				{
+					"name": "constant.character.escape.lit",
+					"match": "\\\\(?:[0\"\\0{abfnrtv])"
+				},
+				{
+					"name": "constant.character.interpolation.lit",
+					"begin": "\\$\\{",
+					"end" : "\\}",
+					"patterns": [
+						{ "include": "#code" }
+					]
+				}
+			]
+		},
+		"code": {
+			"patterns": [
+				{ "include": "#keywords" },
+				{ "include": "#strings" },
+				{ "include": "#constant" },
+				{ "include": "#comment" },
+				{ "include": "#blockComment" },
+				{ "include": "#call" },
+				{ "include": "#stringEscapes" }
+			]
+		}
+	},
+	"scopeName": "source.lit"
+}
