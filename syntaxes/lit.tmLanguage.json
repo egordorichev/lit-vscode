@@ -79,6 +79,10 @@
 				}
 			]
 		},
+		"expectedComment": {
+			"name": "comment.expected.lit",
+			"match": "\/\/ Expected: .*"
+		},
 		"comment": {
 			"name": "comment.line.lit",
 			"match": "\/\/.*"
@@ -118,6 +122,7 @@
 				{ "include": "#keywords" },
 				{ "include": "#strings" },
 				{ "include": "#constant" },
+				{ "include": "#expectedComment" },
 				{ "include": "#comment" },
 				{ "include": "#blockComment" },
 				{ "include": "#call" },
