@@ -46,12 +46,26 @@
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double.lit",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
-				{ "include": "#stringEscapes" }
+				{
+					"name": "string.quoted.double.lit",
+					"begin": "\\$\"",
+					"end": "\"",
+					"patterns": [
+						{ "include": "#stringEscapes" },
+						{ "include": "#interpolation" }
+					]
+				},
+				{
+					"name": "string.quoted.double.lit",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{ "include": "#stringEscapes" }
+					]
+				}
 			]
+			
 		},
 		"constant": {
 			"patterns": [
@@ -84,10 +98,14 @@
 				{
 					"name": "constant.character.escape.lit",
 					"match": "\\\\(?:[0\"\\0{abfnrtv])"
-				},
+				}
+			]
+		},
+		"interpolation": {
+			"patterns": [
 				{
 					"name": "constant.character.interpolation.lit",
-					"begin": "\\$\\{",
+					"begin": "\\{",
 					"end" : "\\}",
 					"patterns": [
 						{ "include": "#code" }
