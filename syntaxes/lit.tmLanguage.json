@@ -28,6 +28,10 @@
 					"match": "(\\+=|\\-=|\\*=|\\/=|%=|#=|=)"
 				},
 				{
+					"name": "keyword.operator.vararg.lit",
+					"match": "(\\.\\.\\.)"
+				},
+				{
 					"name": "keyword.operator.range.lit",
 					"match": "(\\.\\.)"
 				},
@@ -57,7 +61,7 @@
 					]
 				},
 				{
-					"name": "string.quoted.double.lit",
+					"name": "string.interpolated.lit",
 					"begin": "\"",
 					"end": "\"",
 					"patterns": [
