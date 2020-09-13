@@ -5,11 +5,19 @@
 		{ "include" : "#code" }
 	],
 	"repository": {
+		"define": {
+			"patterns": [
+				{
+					"name": "keyword.other.lit",
+					"match": "#(define|ifdef|undef|ifndef)\\b"
+				}
+			]
+		},
 		"keywords": {
 			"patterns": [
 				{
 					"name": "keyword.control.lit",
-					"match": "\\b(is|break|const|constructor|continue|else|export|false|for|function|if|in|new|null|operator|return|static|super|this|true|var|while)\\b"
+					"match": "\\b(is|break|const|constructor|continue|else|export|false|for|function|if|in|new|null|operator|return|static|super|this|true|var|while|ref)\\b"
 				},
 				{
 					"name": "keyword.control.lit",
@@ -22,6 +30,10 @@
 				{
 					"name": "keyword.operator.comparison.lit",
 					"match": "(==|!=|<=|>=|<|>)"
+				},
+				{
+					"name": "keyword.operator.subscript.lit",
+					"match": "(\\[|\\])"
 				},
 				{
 					"name": "keyword.operator.assignment.lit",
@@ -126,6 +138,7 @@
 				{ "include": "#keywords" },
 				{ "include": "#strings" },
 				{ "include": "#constant" },
+				{ "include": "#define" },
 				{ "include": "#expectedComment" },
 				{ "include": "#comment" },
 				{ "include": "#blockComment" },
