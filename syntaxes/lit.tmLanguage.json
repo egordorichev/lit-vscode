@@ -9,7 +9,7 @@
 			"patterns": [
 				{
 					"name": "keyword.other.lit",
-					"match": "#(define|ifdef|undef|ifndef)\\b"
+					"match": "#(define|ifdef|undef|ifndef|endif|else)\\b"
 				}
 			]
 		},

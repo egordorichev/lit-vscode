@@ -2,7 +2,7 @@
     "name": "lit-lang",
     "displayName": "Lit",
     "description": "Syntax highlighting for lit",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "publisher" : "egordorichev",
     "repository": "https://github.com/egordorichev/lit-vscode",
     "engines": {
