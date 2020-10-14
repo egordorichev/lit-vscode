@@ -17,7 +17,7 @@
 			"patterns": [
 				{
 					"name": "keyword.control.lit",
-					"match": "\\b(is|break|const|constructor|continue|else|export|false|for|function|if|in|new|null|operator|return|static|super|this|true|var|while|ref)\\b"
+					"match": "\\b(is|break|const|value|constructor|continue|else|export|false|for|function|if|in|new|null|operator|return|static|super|this|true|var|while|ref)\\b"
 				},
 				{
 					"name": "keyword.control.lit",
